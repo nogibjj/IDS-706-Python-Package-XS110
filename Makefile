@@ -15,5 +15,11 @@ test:
 
 deploy:
 	#deploy goes here
-		
-all: install lint deploy format test 
+
+setup_package: 
+	python setup.py develop
+
+databricks-query:
+	databricks-query
+
+all: install lint deploy format test setup_package databricks-cli
