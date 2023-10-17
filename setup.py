@@ -13,7 +13,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "databricks-query = main:main",
+            "databricks-query = main:run_query",
         ],
     },
 )

@@ -8,7 +8,7 @@ class Test_run_query(unittest.TestCase):
     def test_run_query(self, mock_print):
 
         # Call the connect_to_database function
-        main.main()
+        main.run_query()
 
         # Assertions based on the expected output
         mock_print.assert_any_call("Query execution completed.")
