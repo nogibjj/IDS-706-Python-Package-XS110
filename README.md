@@ -17,7 +17,7 @@ To connect with Databricks, I did the following steps:
 
 I created a .env file
 
-```
+```ini
 DATABRICKS_HOST='adb-xxxx'
 DATABRICKS_HTTP_PATH='/sql/xxx'
 DATABRICKS_TOKEN = 'dapxxx'
@@ -37,62 +37,8 @@ tabulate
 
 ### 3.Update mylib.query.py
 
-I updated the query.py using  the Databricks SQL Connector for Python. I have uploaded two csv files to the databricks SQL warehouse, customers.csv and orders.csv. I used Databricks SQL Connector for Python to run a complex SQL query involving joins, aggregation, and sorting.
+I updated the query.py using  the Databricks SQL Connector for Python. I have uploaded two csv files to the databricks SQL warehouse, customers.csv and orders.csv. I used Databricks SQL Connector for Python to run a complex SQL query involving joins, aggregation, and sorting. See the specific function in script.
 
-Here is the specific function:
-
-```python
-def run_query():
-    try:
-        # Replace with your environment variables or provide the actual values
-        server_hostname = os.getenv("DATABRICKS_HOST")
-        http_path = os.getenv("DATABRICKS_HTTP_PATH")
-        access_token = os.getenv("DATABRICKS_TOKEN")
-
-        # Establish a connection
-        with sql.connect(
-            server_hostname=server_hostname,
-            http_path=http_path,
-            access_token=access_token
-        ) as connection:
-            # Create a cursor
-            with connection.cursor() as cursor:
-                # Define the SQL query
-                sql_query = """
-                SELECT customerName, COUNT(O.orderNumber) as orderNum
-                FROM customers AS C
-                LEFT JOIN orders AS O ON C.customerNumber = O.customerNumber
-                GROUP BY customerName
-                HAVING customerName IS NOT NULL
-                ORDER BY orderNum DESC
-                LIMIT 10
-                """
-                # Execute the query
-                cursor.execute(sql_query)
-
-                # Fetch the result
-                result = cursor.fetchall()
-
-
-                # Print the result as a table
-                headers = ["Customer Name", "Order Number"]
-                table = tabulate(result, headers=headers, tablefmt="pretty")
-                print(table)
-                print("Query execution completed.")
-    except Exception as e:
-        print(f"Error: {e}")
-
-    finally:
-        try:
-            # Close cursor and connection
-            cursor.close()
-            connection.close()
-            print("Connection closed.")
-        except NameError:
-            # Handle the case where the cursor or connection was not defined
-            pass
-
-```
 
 ### 3. Create setup.py
 
