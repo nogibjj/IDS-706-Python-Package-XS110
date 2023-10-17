@@ -100,3 +100,7 @@ This query joined two tables: orders and customers on custermer id, then  retrie
 
 ### 2. passed all tests
 ![Alt text](image/image2.png)
+
+### 3. flow chart
+
+![Alt text](image/image3.png)
