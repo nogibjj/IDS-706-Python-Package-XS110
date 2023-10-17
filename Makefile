@@ -22,4 +22,4 @@ setup_package:
 databricks-query:
 	databricks-query
 
-all: install lint deploy format test setup_package databricks-cli
+all: install lint deploy format test setup_package databricks-query
