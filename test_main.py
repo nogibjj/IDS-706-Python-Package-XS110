@@ -1,11 +1,14 @@
 import unittest
-from unittest.mock import patch
+
+# from unittest.mock import patch
 import main
+
 
 class Test_run_query(unittest.TestCase):
     def test_ctest_run_queryreate_db(self):
         result = main.run_query()
         self.assertEqual(result, "Success", "Failed to run the query")
+
 
 # class Test_run_query(unittest.TestCase):
 #     #@patch("builtins.print")  # Mock the print function to capture output
