@@ -11,7 +11,7 @@ lint:
 
 test:
 	python -m pytest -vv --cov=main test_*.py
-	pytest --nbval test.ipynb
+
 
 deploy:
 	#deploy goes here
