@@ -52,6 +52,7 @@ def run_query():
             cursor.close()
             connection.close()
             print("Connection closed.")
+            return "Success"
         except NameError:
             # Handle the case where the cursor or connection was not defined
             pass

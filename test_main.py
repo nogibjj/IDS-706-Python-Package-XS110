@@ -5,7 +5,7 @@ import main
 
 class Test_run_query(unittest.TestCase):
     def test_ctest_run_queryreate_db(self):
-        result = main.main()
+        result = main.run_query()
         self.assertEqual(result, "Success", "Failed to run the query")
 
 
