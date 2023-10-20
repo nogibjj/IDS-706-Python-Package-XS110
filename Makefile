@@ -19,7 +19,7 @@ deploy:
 setup_package: 
 	python setup.py develop
 
-databricks-query:
-	databricks-query
+query:
+	databricks-query 
 
-all: install lint deploy format test setup_package databricks-query
+all: install lint deploy format test setup_package query

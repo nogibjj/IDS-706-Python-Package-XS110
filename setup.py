@@ -7,13 +7,13 @@ setup(
     author_email="xs110@duke.edu",
     packages=find_packages(),
     install_requires=[
-        "databricks",
+        "databricks-sql-connector",
         "python-dotenv",
         "tabulate",
     ],
     entry_points={
         "console_scripts": [
-            "databricks-query = main:run_query",
+            "databricks-query = main:main",
         ],
     },
 )
