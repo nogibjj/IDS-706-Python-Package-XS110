@@ -41,7 +41,7 @@ jobs:
       - name: install local package
         run: make setup_package
       - name: query
-        run: make databricks-query
+        run: make query
 
       - name: Archive and Upload Artifacts
         uses: actions/upload-artifact@v3
