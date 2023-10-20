@@ -1,24 +1,24 @@
 import unittest
-from unittest.mock import patch
+#from unittest.mock import patch
 import main
 
 
-# class Test_run_query(unittest.TestCase):
-#     def test_ctest_run_queryreate_db(self):
-#         result = main.run_query()
-#         self.assertEqual(result, "Success", "Failed to run the query")
-
-
 class Test_run_query(unittest.TestCase):
-    @patch("builtins.print")  # Mock the print function to capture output
-    def test_run_query(self, mock_print):
+    def test_ctest_run_queryreate_db(self):
+        result = main.main()
+        self.assertEqual(result, "Success", "Failed to run the query")
 
-        # Call the connect_to_database function
-        main.run_query()
 
-        # Assertions based on the expected output
-        mock_print.assert_any_call("Query execution completed.")
-        mock_print.assert_any_call("Connection closed.")
+# class Test_run_query(unittest.TestCase):
+#     @patch("builtins.print")  # Mock the print function to capture output
+#     def test_run_query(self, mock_print):
+
+#         # Call the connect_to_database function
+#         main.run_query()
+
+#         # Assertions based on the expected output
+#         mock_print.assert_any_call("Query execution completed.")
+#         mock_print.assert_any_call("Connection closed.")
 
 
 if __name__ == "__main__":
