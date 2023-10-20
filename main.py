@@ -55,6 +55,7 @@ def run_query():
         except NameError:
             # Handle the case where the cursor or connection was not defined
             pass
+    return "Success"
 
 
 if __name__ == "__main__":
